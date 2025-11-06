@@ -1,0 +1,28 @@
+钻石:
+  Name: "§b钻石"
+  DisplayName: "§d钻石"
+  DisplayItem: diamond_block
+  DisplayAmount: 2
+  DisplayLore:
+    - "钻石"
+  Glowing: true
+  DisplayCustomModelData: -1
+  DisplayModel:
+    Namespace: ""
+    Key: ""
+  DisplayRate: "§c概率: 25%"
+  Items:
+    - {Item: diamond, Amount: 1, Name: "钻石", Lore: ["普通的钻石"],CustomModelData: -1,Model:{Namespace: "",Key: ""}}
+    - {Item: iron_ingot, Amount: 1, Name: "铁233", Lore: ["§b铁"]}
+  Commands:
+    - xp add %player% 100
+铁:
+  Name: "§8铁"
+  DisplayItem: iron_ingot
+  Items:
+    - {Item: iron_ingot, Amount: 2}
+mm物品1:
+  Name: "§b物品1"
+  DisplayItem: "Mythic:物品1"
+  Items:
+    - {Item: "Mythic:物品1", Amount: 1}

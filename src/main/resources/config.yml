@@ -1,0 +1,5 @@
+setting:
+  language: zh_CN
+  onlyCheckInMainHand: true
+  glassName: "§7rolling"
+  prefix: "[§dFortuneBox§f]"

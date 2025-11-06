@@ -1,0 +1,31 @@
+package org.spectrumflow.fortunebox.api.enums
+
+enum class BoxConfig(val key: String) {
+    BoxType("Box.BoxType"),
+    Name("Box.Name"),
+    BoardCastEnable("Box.BoardCast.Enable"),
+    OpeningBoardCast("Box.BoardCast.OpeningBoardCast"),
+    CompletedBoardCast("Box.BoardCast.CompletedBoardCast"),
+    OpeningCommandEnable("Box.OpeningCommand.Enable"),
+    OpeningCommands("Box.OpeningCommand.Commands"),
+    Sound("Box.Sound"),
+    PrizeMessage("Box.PrizeMessage"),
+    PrizeCommands("Box.PrizeCommands"),
+    PreviewEnable("Box.Preview.Enable"),
+    PreviewName("Box.Preview.Name"),
+    Animation("Box.Animation"),
+    HologramEnable("Box.Hologram.Enable"),
+    HologramHeight("Box.Hologram.Height"),
+    HologramRange("Box.Hologram.Range"),
+    HologramUpdateInterval("Box.Hologram.UpdateInterval"),
+    HologramContent("Box.Hologram.Content"),
+    RequireKeys("Box.RequireKeys"),
+    KeyName("Box.Key.Name"),
+    KeyLore("Box.Key.Lore"),
+    KeyItem("Box.Key.Item"),
+    KeyCustomModelData("Box.Key.CustomModelData"),
+    KeyModelNamespace("Box.Key.Model.Namespace"),
+    KeyModelKey("Box.Key.Model.Key"),
+    KeyGlowing("Box.Key.Glowing"),
+    Prize("Box.Prize")
+}

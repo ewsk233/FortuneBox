@@ -1,0 +1,19 @@
+
+# Command
+reload-success: "\\[&bFortuneBox&f\\] 配置文件重载成功"
+set-success: "\\[&bFortuneBox&f\\] 设置成功"
+must-be-player: "\\[&bFortuneBox&f\\] &c必须为玩家!"
+must-be-looking-at-block: "\\[&bFortuneBox&f\\] &c必须对准一个方块!"
+no-box: "\\[&bFortuneBox&f\\] &c没有这个箱子：{0}"
+get-key-success: "\\[&bFortuneBox&f\\] 获取 {0} 成功!"
+give-key-success: "\\[&bFortuneBox&f\\] 你已成功给予 {0} {1} 个 {2}"
+
+
+
+# Action
+no-key: "\\[&bFortuneBox&f\\] &c你没有这个箱子足够的钥匙：{0}"
+break-box-success: "\\[&bFortuneBox&f\\] 你已成功移除此抽奖箱"
+
+# UI
+prev-page-button: "上一页"
+next-page-button: "下一页"

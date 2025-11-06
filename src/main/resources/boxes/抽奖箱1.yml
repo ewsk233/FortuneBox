@@ -1,0 +1,52 @@
+Box:
+  BoxType: CSGO
+  Name: "§a普通抽奖箱"
+  BoardCast:
+    Enable: true
+    OpeningBoardCast: "%prefix% §e%player% §f正在打开 §a普通抽奖箱"
+    CompletedBoardCast: "%prefix% §e%player% §f获得了 %prize%"
+  OpeningCommand:
+    Enable: false
+    Commands:
+      - "say %player% 打开了 §a普通抽奖箱"
+  Sound:
+    Cycle:
+      Enable: true
+      Value: "block.note_block.xylophone"
+      Volume: 1.0
+      Pitch: 1.0
+    Stop:
+      Enable: true
+      Value: "entity.player.levelup"
+      Volume: 1.0
+      Pitch: 1.0
+  PrizeMessage:
+    - "你从 §a%box% §f获得了 %prize%"
+  PrizeCommands: []
+  Preview:
+    Enable: true
+    Name: "§a普通抽奖箱§f预览"
+  Animation: "§d抽奖中..."
+  Hologram:
+    Enable: true
+    Height: 1.5
+    Range: 12
+    UpdateInterval: -1
+    Content:
+      - "§a普通抽奖箱"
+      - "每次抽奖需要1个钥匙"
+  RequireKeys: 1
+  Key:
+    Name: "§a普通抽奖箱钥匙"
+    Lore:
+      - "用于开启 §a普通抽奖箱"
+    Item: "tripwire_hook"
+    CustomModelData: -1
+    Model:
+      Namespace: ""
+      Key: ""
+    Glowing: true
+  Prize:
+    - {Key: "钻石",Weight: 1}
+    - {Key: "铁",Weight: 4}
+
