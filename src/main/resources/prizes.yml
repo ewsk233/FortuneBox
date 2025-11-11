@@ -13,7 +13,7 @@
   DisplayRate: "§c概率: 25%"
   Items:
     - {Item: diamond, Amount: 1, Name: "钻石", Lore: ["普通的钻石"],CustomModelData: -1,Model:{Namespace: "",Key: ""}}
-    - {Item: iron_ingot, Amount: 1, Name: "铁233", Lore: ["§b铁"]}
+    - {Item: iron_ingot, Amount: 1, Name: "铁233", Lore: ["§b铁"],Enchants:{protection: 4}}
   Commands:
     - xp add %player% 100
 铁:
@@ -23,6 +23,6 @@
     - {Item: iron_ingot, Amount: 2}
 mm物品1:
   Name: "§b物品1"
-  DisplayItem: "Mythic:物品1"
+  DisplayItem: "mm:物品1"
   Items:
-    - {Item: "Mythic:物品1", Amount: 1}
+    - {Item: "mm:物品1", Amount: 1}

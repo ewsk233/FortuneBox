@@ -4,8 +4,10 @@ import org.bukkit.Material
 import org.bukkit.NamespacedKey
 import org.bukkit.inventory.ItemStack
 import taboolib.library.configuration.ConfigurationSection
+import taboolib.library.xseries.XEnchantment
 import taboolib.platform.util.buildItem
 import top.maplex.arim.Arim
+import kotlin.collections.set
 
 /**
  * @author ewsk
@@ -20,6 +22,7 @@ class Prize(
     private val displayLore = section.getStringList("DisplayLore")
     private val displayAmount = section.getInt("DisplayAmount",1)
     private val glowing = section.getBoolean("Glowing")
+    private val enchants = section.getConfigurationSection("Enchants")
     private val displayCustomModelData = section.getInt("DisplayCustomModelData",-1)
     private val displayModelNamespace = section.getString("DisplayModel.Namespace")
     private val displayModelKey = section.getString("DisplayModel.Key")
@@ -31,6 +34,17 @@ class Prize(
             displayRate?.apply { lore += displayRate }
             amount = displayAmount
             if (glowing) shiny()
+            val keys = this@Prize.enchants?.getKeys(false)
+            if (keys != null){
+                for (key: String in keys){
+                    val level = this@Prize.enchants.getInt(key,0)
+                    val enchantment = XEnchantment.of(key).get().get()
+                    if (enchantment != null){
+                        enchants[enchantment] = level
+                    }
+                }
+            }
+
             if (this@Prize.displayCustomModelData != -1) customModelData = this@Prize.displayCustomModelData
             if (!displayModelNamespace.isNullOrBlank() && !displayModelKey.isNullOrBlank()){
                 itemModel = NamespacedKey(displayModelNamespace,displayModelKey)
@@ -46,6 +60,7 @@ class Prize(
         val amount = map["Amount"]
         val customModelData = map["CustomModelData"]
         val model = map["Model"]
+        val enchants = map["Enchants"]
         val itemStack = item?.let { i ->
             buildItem((i as String).parseToItem()) {
                 name?.apply { this@buildItem.name = this as String }
@@ -58,6 +73,16 @@ class Prize(
                     val key = m["Key"]
                     if (namespace != null && key != null && (namespace as String).isNotBlank() && (key as String).isNotBlank()) {
                         this@buildItem.itemModel = NamespacedKey(namespace, key)
+                    }
+                }
+                enchants?.apply {
+                    val m = this as Map<*,*>
+                    m.keys.forEach { key ->
+                        val level = (m[key] as Number).toInt()
+                        val enchantment = XEnchantment.of(key as String).get().get()
+                        if (enchantment != null){
+                            this@buildItem.enchants[enchantment] = level
+                        }
                     }
                 }
             }
