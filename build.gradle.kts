@@ -35,6 +35,7 @@ taboolib {
         dependencies{
             name("AzureFlow").optional(true)
             name("PlaceholderAPI").optional(true)
+            name("DecentHolograms").optional(true)
         }
     }
     relocate("ink.ptms.um", "org.spectrumflow.fortunebox.um")

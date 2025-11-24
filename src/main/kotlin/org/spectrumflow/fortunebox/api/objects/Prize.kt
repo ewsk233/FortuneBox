@@ -22,7 +22,7 @@ class Prize(
     private val displayLore = section.getStringList("DisplayLore")
     private val displayAmount = section.getInt("DisplayAmount",1)
     private val glowing = section.getBoolean("Glowing")
-    private val enchants = section.getConfigurationSection("Enchants")
+    private val enchants = section.getConfigurationSection("DisplayEnchants")
     private val displayCustomModelData = section.getInt("DisplayCustomModelData",-1)
     private val displayModelNamespace = section.getString("DisplayModel.Namespace")
     private val displayModelKey = section.getString("DisplayModel.Key")

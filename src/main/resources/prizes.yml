@@ -6,6 +6,7 @@
   DisplayLore:
     - "钻石"
   Glowing: true
+  DisplayEnchants: {protection: 1}
   DisplayCustomModelData: -1
   DisplayModel:
     Namespace: ""
