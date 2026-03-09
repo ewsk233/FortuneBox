@@ -38,8 +38,8 @@ taboolib {
             name("DecentHolograms").optional(true)
         }
     }
-    relocate("ink.ptms.um", "org.spectrumflow.fortunebox.um")
-    relocate("top.maplex.arim","org.spectrumflow.fortunebox.arim")
+    relocate("ink.ptms.um", "org.ewsk.fortunebox.um")
+    relocate("top.maplex.arim","org.ewsk.fortunebox.arim")
     version { taboolib = "6.2.3-d4a5f0ea" }
 }
 
