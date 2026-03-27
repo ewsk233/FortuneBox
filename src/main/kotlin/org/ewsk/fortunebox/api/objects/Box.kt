@@ -64,7 +64,7 @@ class Box(
         val prizes = ArrayList<Prize>()
         val list = file.getList(BoxConfig.Prize.key)
         val items = org.ewsk.fortunebox.infra.config.ConfigManager.getItems()
-        list?.map {
+        list?.forEach {
             val map = it as Map<*, *>
             val key = map["Key"] as String
             val weight = map["Weight"] as Int
@@ -132,7 +132,7 @@ class Box(
                 val value = section.getString("$type.Value")
                 val volume = section.getDouble("$type.Volume", 1.0)
                 val pitch = section.getDouble("$type.Pitch", 1.0)
-                if (value != null && value.isNotBlank()) {
+                if (!value.isNullOrBlank()) {
                     location.world?.playSound(location, value, volume.toFloat(), pitch.toFloat())
                 }
                 soundMap[type] = SoundData(true, value, volume.toFloat(), pitch.toFloat())

@@ -21,6 +21,12 @@ class DecentHologramSupport: HologramSupport() {
         this.holograms[name] = hologram
     }
 
+    override fun updateHologram(name: String, lines: List<String>) {
+        if (!exists(name)) return
+        val hologram = holograms[name]
+        hologram?.let { DHAPI.setHologramLines(it,lines) }
+    }
+
     override fun removeHologram(name: String) {
         DHAPI.removeHologram(name)
         this.holograms.remove(name)

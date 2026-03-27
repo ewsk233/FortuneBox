@@ -11,7 +11,7 @@ import io.izzel.taboolib.gradle.Bukkit
 
 plugins {
     java
-    id("io.izzel.taboolib") version "2.0.27"
+    id("io.izzel.taboolib") version "2.0.36"
     id("org.jetbrains.kotlin.jvm") version "2.2.0"
 }
 
@@ -40,7 +40,7 @@ taboolib {
     }
     relocate("ink.ptms.um", "org.ewsk.fortunebox.um")
     relocate("top.maplex.arim","org.ewsk.fortunebox.arim")
-    version { taboolib = "6.2.3-d4a5f0ea" }
+    version { taboolib = "6.2.4-99fb800" }
 }
 
 repositories {

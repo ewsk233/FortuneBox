@@ -37,7 +37,7 @@ object FortuneBox : Plugin() {
         userManager = BukkitUserManager()
         console().sendMessage("[§dFortuneBox§f]§a load success")
         console().sendMessage("[§dFortuneBox§f]§a author's QQ: §e2962271068")
-        Metrics(27879,"0.0.2", Platform.BUKKIT)
+        Metrics(27879,"0.0.3", Platform.BUKKIT)
     }
 
     override fun onDisable() {

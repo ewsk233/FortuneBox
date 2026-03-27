@@ -9,6 +9,7 @@ import org.ewsk.fortunebox.api.enums.BoxConfig
 import org.ewsk.fortunebox.api.enums.BoxType
 import org.ewsk.fortunebox.api.objects.Box
 import org.ewsk.fortunebox.box.CSGOBox
+import org.ewsk.fortunebox.box.RollCrate
 import org.ewsk.fortunebox.box.RouletteBox
 import org.ewsk.fortunebox.infra.config.ConfigManager
 import org.ewsk.fortunebox.infra.hologram.DecentHologramSupport
@@ -72,7 +73,7 @@ class BoxManager {
                 boxMap[location] = box
                 locationKey[location] = key
                 if (box.hologramEnable && hologramSupport != null){
-                    hologramSupport!!.createHologram(location,box,key)
+                    hologramSupport?.createHologram(location,box,key)
                 }
             }else{
                 warning("fail to load box instance: $name")
@@ -140,6 +141,7 @@ class BoxManager {
         val boxBuilder = when(boxType){
             BoxType.CSGO -> CSGOBox(player,box,location)
             BoxType.Roulette -> RouletteBox(player,box,location)
+            BoxType.Roll -> RollCrate(player,box,location,locationKey[location])
         }
         addOpeningList(player)
         box.executeOpening(player)
@@ -155,5 +157,7 @@ class BoxManager {
     }
     fun hasOpeningList(player: Player) = openingBoxList.contains(player)
     fun removeOpeningList(player: Player) = openingBoxList.remove(player)
-
+    fun updateHologram(name: String,lines: List<String>){
+        hologramSupport?.updateHologram(name,lines)
+    }
 }
